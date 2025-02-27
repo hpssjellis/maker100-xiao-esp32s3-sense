@@ -1,8 +1,10 @@
 # maker100-xiao-esp32s3
 maker100-eco with a LoRa capable Seeedstudio module for the IoT part.
 
+Also check the curriculum at https://github.com/hpssjellis/maker100-curriculum
 
-Based on the working Maker100-eco course at https://github.com/hpssjellis/maker100-eco but with the Seeedstudio LoRa module
+
+Based on the working Maker100-eco course at https://github.com/hpssjellis/maker100-eco but with the Seeedstudio LoRa module  
 
 
 $9.90 USD LoRa Module https://www.seeedstudio.com/Wio-SX1262-with-XIAO-ESP32S3-p-5982.html
