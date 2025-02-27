@@ -1,5 +1,8 @@
 # maker100-xiao-esp32s3-sense
-maker100-eco with a LoRa capable Seeedstudio module for the IoT part.
+
+Started Feb 26th, 2025
+
+A combination of maker100-eco with a LoRa capable Seeedstudio module for the IoT part.
 
 Also check the curriculum at https://github.com/hpssjellis/maker100-curriculum
 
