@@ -21,9 +21,15 @@ More comming.
 
 
 
+Present work. tryng to fully understand meshtastic. especially how to communicate with it.
+
+https://meshtastic.org/docs/development/firmware/build/
 
 
 
+
+
+# just a reminder about the curriculum
 
 ChatGPT update of the maker100 curriculum with the new xiao-LoRa module. I will change these just need a place to put them.
 
