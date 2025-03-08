@@ -18,6 +18,8 @@
 
   https://wiki.seeedstudio.com/wio_sx1262_with_xiao_esp32s3_kit_class/
 
+// MUST BE SET IN RADIO CONFIGURATION, LORA --> OVERRIDE FREQUENCY 915.0
+// Must reset the LoRa module
   
 */
 
@@ -79,18 +81,20 @@ void cycleParameters() {
 
 void initRadio() {
   // Note: This was set in the Mestastic LoRa setting as fixed.   
-    float frequency = 915;   //  906.875;   //     // 915;   // 906.875;   // 915.0;
+    float frequency =  915;   //   906.875;  // 915;   // MUST BE SET IN RADIO CONFIGURATION, LORA --> OVERRIDE FREQUENCY 915.0
     float bandwidth = bandwidthOptions[currentBW];
     uint8_t spreadingFactor = spreadingFactorOptions[currentSF];
     uint8_t codingRate = codingRateOptions[currentCR];
-    uint8_t syncWord = syncWordOptions[currentSW];   //  // // 0x00;  // 0x12;   //0x2B;  //0x34; //  0x2B;  // 0xAB;  // 0x2B;  // 0x12;   // 0x34;
+    uint8_t syncWord = syncWordOptions[currentSW];   
     float outputPower = 14;
-    uint16_t preambleLength = 8;  //8;  //16;
+    uint16_t preambleLength = 16;  //8;  //8;  //16;  //32;
 
-    Serial.print(F("BW:")); Serial.print(bandwidth);
+    Serial.print(F("freq:")); Serial.print(frequency);
+    Serial.print(F(", BW:")); Serial.print(bandwidth);
     Serial.print(F(", SF:")); Serial.print(spreadingFactor);
     Serial.print(F(", CR:")); Serial.print(codingRate);
-    Serial.print(F(", SW:")); Serial.println(syncWord, HEX);  //Serial.println(syncWord);
+    Serial.print(F(", SW:0x")); Serial.print(syncWord, HEX);  //Serial.println(syncWord);
+    Serial.print(F(", preamble:")); Serial.println(preambleLength);
 
     int state = radio.begin(frequency, bandwidth, spreadingFactor, codingRate, syncWord, outputPower, preambleLength, 1.6, false);
     if (state == RADIOLIB_ERR_NONE) {
